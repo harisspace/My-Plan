@@ -1,0 +1,18 @@
+.projectSummary {
+    border: 1px solid lightgrey;
+    margin-bottom: 20px;
+    padding: 30px;
+}
+
+.projectSummary__project {
+    background-color: red;
+    display: block;
+}
+
+.projectSummary a {
+    color: black;
+}
+
+.projectSummary__createdAt {
+    color: rgb(126, 122, 122);
+}

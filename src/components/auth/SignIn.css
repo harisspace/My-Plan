@@ -1,0 +1,16 @@
+.signIn {
+    width: 60%;
+    margin: auto;
+}
+
+.signIn__button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: pink;
+    border: none;
+    border-radius: 5px;
+}
+
+.signIn__button:hover {
+    cursor: pointer;
+}

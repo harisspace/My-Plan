@@ -1,0 +1,9 @@
+.project {
+    width: 60%;
+    margin: auto;
+}
+
+.project h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}

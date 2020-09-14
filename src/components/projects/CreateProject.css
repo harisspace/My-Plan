@@ -1,0 +1,23 @@
+.createProject {
+    width: 70%;
+    margin: auto;
+    border: 1px solid lightgrey;
+    padding: 30px;
+}
+
+#createProject__text {
+    border: none;
+    border-bottom: 1px solid lightslategray;
+}
+
+.createProject__button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: pink;
+    border: none;
+    border-radius: 5px;
+}
+
+.createProject__button:hover {
+    cursor: pointer;
+}

@@ -4,6 +4,7 @@ import ProjecList from '../projects/ProjectList';
 import './Dashboard.css';
 import { connect } from 'react-redux';
 
+
 class Dashboard extends Component {
     render() {
         return (
@@ -21,5 +22,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Dashboard)
+
+
+
+export default connect(mapStateToProps)(Dashboard) 
 

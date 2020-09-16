@@ -1,5 +1,5 @@
 const initState = {
-
+    
 };
 
 function authReducer(state = initState, action) {

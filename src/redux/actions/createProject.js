@@ -1,22 +1,25 @@
-import { db } from '../../config/fbConfig';
-import firebase from 'firebase/app';
-
 export const createProject = (project) => {
-    return (dispatch, getState) => {
-        db.collection('projects').add({
-            ...project,
-            authorFirstName: 'Haris',
-            authorLastName: 'Akbar',
-            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-
-        })
-            .then(() => dispatch({
-                type: 'CREATE_PROJECT',
-                project
-            }))
-            .catch(error => dispatch({
-                type: 'CREATE_PROJECT_ERROR',
-                error
-            }))
+    return (dispatch, getState, getFirebase) => {
+        const firestore = getFirebase().firestore();
+        firestore
+            .collection('projects')
+            .add({
+                ...project,
+                authorFirstName: 'Haris',
+                authorLastName: 'Akbar',
+                createdAt: '2am'
+            })
+            .then(() => {
+                dispatch({
+                    type: 'ADD_PROJECT',
+                    project
+                })
+            })
+            .catch(err => {
+                dispatch({
+                    type: 'ADD_PROJECT_ERROR',
+                    err
+                })
+            })
     }
 }

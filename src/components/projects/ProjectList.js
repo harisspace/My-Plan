@@ -3,6 +3,7 @@ import ProjectSummary from './ProjectSummary';
 import './ProjectList.css';
 
 function ProjectList({projects}) {
+    
     return (
         <div className="projectList">
 

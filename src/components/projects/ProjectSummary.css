@@ -9,10 +9,6 @@
     display: block;
 }
 
-.projectSummary a {
-    color: black;
-}
-
 .projectSummary__createdAt {
     color: rgb(126, 122, 122);
 }

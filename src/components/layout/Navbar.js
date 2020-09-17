@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import SigninLinks from './SigninLinks';
 import SignoutLinks from './SignoutLinks';
 import './Navbar.css';
+import { connect } from 'react-redux';
 
-function Navbar() {
+function Navbar({ auth }) {
     return (
         <div className="navbar">
             <div className="navbar__logo">
@@ -12,10 +13,24 @@ function Navbar() {
                     <h5>My Plan</h5>
                 </Link>
             </div>
-            <SigninLinks />
-            <SignoutLinks />
+
+            {
+                auth.uid ? (
+                    <SigninLinks />
+                ) : (
+                    <SignoutLinks />
+                )
+            }
+            
+            
         </div>
     )
 }
 
-export default Navbar
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+}
+
+export default connect(mapStateToProps)(Navbar)

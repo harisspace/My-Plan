@@ -3,8 +3,11 @@ import './Project.css';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
+import { Redirect } from 'react-router-dom';
 
-function Project({project}) {
+function Project({project, auth}) {
+    if (!auth.id) return <Redirect to='/signin' />
+
     if (project) {
         return (
             <div className="project">
@@ -27,7 +30,8 @@ const mapStateToProps = (state, ownProps) => {
     const projects = state.firestore.data.projects;
     const project = projects ? projects[id] : null; 
     return {
-        project
+        project,
+        auth: state.firebase.auth
     }
 }
 

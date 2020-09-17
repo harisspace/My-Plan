@@ -1,3 +1,7 @@
 .projectList {
     margin-right: 20px;
 }
+
+.projectList a {
+    color: black;
+}

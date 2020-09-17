@@ -21,13 +21,14 @@
 .signinLinks {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 40%;
     align-items: center;
 }
 
 .signoutLinks {
     display: flex;
     justify-content: space-between;
+    width: 9%;
 }
 
 .navbar__avatar {

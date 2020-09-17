@@ -9,6 +9,8 @@ import thunk from 'redux-thunk';
 import firebase from './config/fbConfig';
 import { ReactReduxFirebaseProvider, getFirebase } from 'react-redux-firebase';
 import { createFirestoreInstance } from 'redux-firestore';
+import { useSelector } from 'react-redux';
+import { isLoaded } from 'react-redux-firebase';
 
 const store = createStore(rootReducer, applyMiddleware(thunk.withExtraArgument(getFirebase)));
 
@@ -19,10 +21,18 @@ const rrfProps = {
   createFirestoreInstance
 }
 
+function AuthIsLoaded({ children }) {
+  const auth = useSelector(state => state.firebase.auth)
+  if (!isLoaded(auth)) return <div className="center">Loading Post...</div>;
+  return children
+}
+
 ReactDOM.render(
   <Provider store={store}>
     <ReactReduxFirebaseProvider {...rrfProps}>
-      <App />
+      <AuthIsLoaded>
+        <App />
+      </AuthIsLoaded>
     </ReactReduxFirebaseProvider>
   </Provider>,
   document.getElementById('root')

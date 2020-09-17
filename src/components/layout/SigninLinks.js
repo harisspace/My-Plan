@@ -4,12 +4,12 @@ import './Navbar.css';
 import { connect } from 'react-redux';
 import { signOut } from '../../redux/actions/authAction';
 
-function SigninLinks({signout}) {
+function SigninLinks({signout, profile}) {
     return (
         <ul className="signinLinks">
             <NavLink to="/create">New Project</NavLink>
             <NavLink to="/signin" onClick={signout}>Log Out</NavLink>
-            <NavLink to="/"><div className="navbar__avatar">HA</div></NavLink>
+            <NavLink to="/"><div className="navbar__avatar">{profile.initials}</div></NavLink>
         </ul>
     )
 }

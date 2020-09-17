@@ -16,7 +16,10 @@ const store = createStore(rootReducer, applyMiddleware(thunk.withExtraArgument(g
 
 const rrfProps = {
   firebase: firebase,
-  config: {},
+  config: {
+    userProfile: 'users',
+    useFirestoreForProfile: true
+  },
   dispatch: store.dispatch,
   createFirestoreInstance
 }

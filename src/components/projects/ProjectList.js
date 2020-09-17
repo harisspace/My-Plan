@@ -10,7 +10,7 @@ function ProjectList({projects}) {
 
             {
                 projects && projects.map(project => (
-                    <Link to={`project/${project.id}`} key={project.id}>
+                    <Link to={`/project/${project.id}`} key={project.id}>
                         <ProjectSummary project={project} />
                     </Link>
                 ))
